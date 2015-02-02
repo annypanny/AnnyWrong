@@ -2,7 +2,7 @@
 
 Name: Xinyi Pan
 
-Travel Expense Tracker
+Travel Expense Tracker (video: http://youtu.be/u5TFqsJZuuU)
 
 -This application is an simple travel expense tracking application. When you start the application, there is main page about a list view of claim and a button to add new claim.
 
