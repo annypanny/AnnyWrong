@@ -45,6 +45,7 @@ public class AddItemActivity extends Activity {
 		
 		dateFormat();
 		
+		// set add item button enable
 		addItemButton.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
