@@ -30,7 +30,7 @@ Travel Expense Tracker (video: http://youtu.be/u5TFqsJZuuU)
 - If the user would like to send a email of this claim, click " Email Claim" from the menu section at the very top of the right side. Then it would ask you about the email address. Click "send" to sent the claim.
 
 
--reference:
+#reference:
 
 a series of Abram Hindle's youtube video of student picker:
 https://www.youtube.com/watch?v=VKVYUXNuDDg
@@ -40,6 +40,8 @@ https://www.youtube.com/watch?v=7zKCuqScaRE
 
 cmput301 lab Joshua's tutorial about lonely twitter:
 https://github.com/joshua2ua/lonelyTwitter/blob/master/src/ca/ualberta/cs/lonelytwitter/LonelyTwitterActivity.java
+
+serializable: http://developer.android.com/reference/java/io/Serializable.html
 
 # Copyright
 Copyright (C) {2015} {Xinyi Pan anny_pan@live.cn}
