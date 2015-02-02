@@ -33,4 +33,22 @@ Email Claim:
   If the user would like to send a email of this claim, click " Email Claim" from the menu section at the very top of the right side. Then it would ask you about the email address. Click "send" to sent the claim.
   
 
+
+
+
+reference:
+
+a series of Abram Hindle's youtube video of student picker:
+https://www.youtube.com/watch?v=VKVYUXNuDDg
+https://www.youtube.com/watch?v=fxjIA4HIruU
+https://www.youtube.com/watch?v=uLnoI7mbuEo
+https://www.youtube.com/watch?v=7zKCuqScaRE
+
+cmput301 lab Joshua's tutorial about lonely twitter:
+https://github.com/joshua2ua/lonelyTwitter/blob/master/src/ca/ualberta/cs/lonelytwitter/LonelyTwitterActivity.java
+
+
+
+
+
   
