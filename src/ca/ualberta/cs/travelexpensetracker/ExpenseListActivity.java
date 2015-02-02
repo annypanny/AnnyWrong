@@ -29,7 +29,7 @@ public class ExpenseListActivity extends Activity {
 		final ArrayList<Item> itemList = claimList.get(getIndex).getItemArray();
 		final ArrayAdapter<Item> itemListAdapter = new ArrayAdapter<Item>(this,android.R.layout.simple_list_item_2, itemList);
 		itemListView.setAdapter(itemListAdapter);
-
+// add a new listener to update
 	Controller.getItemList().addNewListener(new NewListener() {
 		public void update() {
 			Collection<Item> item = Controller.getItemList().getItem();
