@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+     <Button
+         android:id="@+id/AddC"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentBottom="true"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentRight="true"
+         android:onClick="finishAddClaim"
+         android:text="Save" />
+
+    <TextView
+        android:id="@+id/CNTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="20dp"
+        android:text="Claim Name"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/EDTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/SD"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="End Date"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/ED"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/EDTextView"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/EDTextView"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:inputType="date" />
+
+    <TextView
+        android:id="@+id/DTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ED"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ED"
+        android:layout_marginTop="16dp"
+        android:text="Description"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/D"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/AddC"
+        android:layout_alignLeft="@+id/DTextView"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/DTextView"
+        android:ems="10"
+        android:hint="Destination of the trip?  Reason for the trip?"
+        android:inputType="textMultiLine" />
+
+    <TextView
+        android:id="@+id/StaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/CNTextView"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/CNTextView"
+        android:text="       Status"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Spinner
+        android:id="@+id/StatusS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/CN"
+        android:layout_alignLeft="@+id/StaTextView"
+        android:layout_below="@+id/StaTextView"
+        android:entries="@array/status_type" />
+
+    <EditText
+        android:id="@+id/SD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/EDTextView"
+        android:layout_alignLeft="@+id/SDTextView"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+        android:ems="10"
+        android:inputType="date" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/SDTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/SD"
+        android:layout_alignLeft="@+id/CN"
+        android:text="Start Date"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/CN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/SDTextView"
+        android:layout_alignLeft="@+id/CNTextView"
+        android:layout_marginBottom="24dp"
+        android:layout_toLeftOf="@+id/StatusS"
+        android:ems="10" />
+
+</RelativeLayout>

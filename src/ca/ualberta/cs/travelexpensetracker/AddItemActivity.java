@@ -1,12 +1,17 @@
 package ca.ualberta.cs.travelexpensetracker;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -14,7 +19,7 @@ import android.widget.TextView;
 
 public class AddItemActivity extends Activity {
 	
-	private static final String FILENAME = "ItemFile.sav";
+	//private static final String FILENAME = "ItemFile.sav";
 	
 	private EditText itemName;
 	private Spinner category;
@@ -39,6 +44,34 @@ public class AddItemActivity extends Activity {
 		addItemButton = (Button)findViewById(R.id.AddItemButton);
 		
 		dateFormat();
+		
+		addItemButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				
+				Collection<Claim> claim = Controller.getClaimList().getClaims();
+				ArrayList<Claim> claimlist = new ArrayList<Claim>(claim);
+				int claimNum = Index.getIndex();
+				Controller controller = claimlist.get(claimNum).getController();
+				
+				String n = itemName.getText().toString();
+				String c = category.getSelectedItem().toString();
+				String d = itemDate.getText().toString();
+				Float sa = Float.valueOf(spendAmount.getText().toString());
+				String cur = currency.getSelectedItem().toString();
+				String ide = itemDescription.getText().toString();
+				
+				try {
+					controller.addItem(new Item(n,c,d,sa,cur,ide));
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}						
+				finish();
+			}
+		});
+			
 	}
 
 	@Override

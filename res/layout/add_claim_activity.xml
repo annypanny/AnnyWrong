@@ -18,7 +18,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="14dp"
         android:layout_marginTop="20dp"
@@ -30,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/ClaimNameTextView"
-        android:layout_alignParentRight="true"
+        android:layout_alignRight="@+id/ClaimNameTextView"
         android:layout_below="@+id/ClaimNameTextView"
         android:layout_marginTop="14dp"
         android:ems="10" />
@@ -103,5 +102,24 @@
         android:ems="10"
         android:hint="Destination of the trip?  Reason for the trip?"
         android:inputType="textMultiLine" />
+
+    <TextView
+        android:id="@+id/StatusTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ClaimNameTextView"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/ClaimNameTextView"
+        android:text="       Status"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Spinner
+        android:id="@+id/StatusSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ClaimName"
+        android:layout_alignLeft="@+id/StatusTextView"
+        android:layout_below="@+id/StatusTextView"
+        android:entries="@array/status_type" />
 
 </RelativeLayout>

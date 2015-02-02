@@ -19,12 +19,23 @@
 
 package ca.ualberta.cs.travelexpensetracker;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class MainActivity extends Activity {
 
@@ -32,8 +43,66 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-	}
+		
+		ListView claimListView = (ListView) findViewById(R.id.ClaimList);
+		Collection<Claim> claims = Controller.getClaimList().getClaims();
+		final ArrayList<Claim> claimList = new ArrayList<Claim>(claims);
+		final ArrayAdapter<Claim> claimListAdapter = new ArrayAdapter<Claim>(this,android.R.layout.simple_list_item_1, claimList);
+		claimListView.setAdapter(claimListAdapter);
+		
+		// update new claims
+		Controller.getClaimList().addNewListener(new NewListener() {
+			public void update() {
+				Collection<Claim> claims = Controller.getClaimList().getClaims();
+				claimList.addAll(claims);
+				claimListAdapter.notifyDataSetChanged();
+			}
+		});	
+		
+		// when click on a single claim, show the expense list
+	    claimListView.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				Intent intent = new Intent(MainActivity.this,ExpenseListActivity.class);
+				startActivity(intent);
+			}
+			});
+	    
+	    claimListView.setOnItemLongClickListener(new OnItemLongClickListener(){
 
+			@Override
+			public boolean onItemLongClick(AdapterView<?> parent, View view,
+					final int position, long id) {
+				AlertDialog.Builder build = new AlertDialog.Builder(MainActivity.this);
+				build.setMessage("Edit/Delete "+claimList.get(position).toString()+"?");
+				build.setCancelable(true);
+				final int finalPos = position;
+				build.setPositiveButton("Delete", new OnClickListener() {
+					public void onClick(DialogInterface dialog, int which) {
+						Claim claim = claimList.get(finalPos);
+						Controller.getClaimList().deleteClaim(claim);
+					}
+				});
+				build.show();
+				
+				 build.setNeutralButton("Edit", new OnClickListener() {
+						public void onClick (DialogInterface dialog, int which) {
+							Intent intent = new Intent(MainActivity.this, EditClaimActivity.class);
+							new Index(position);
+					    	startActivity(intent);
+						}
+					});
+				 build.show();
+				return false;
+				
+				}
+			});
+	    
+	   
+	    
+	}
+	    	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

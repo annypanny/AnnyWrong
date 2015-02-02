@@ -11,131 +11,131 @@
     tools:context="ca.ualberta.cs.travelexpensetracker.AddItemActivity" >
 
     <EditText
-        android:id="@+id/ItemName"
+        android:id="@+id/iName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/ItemNameTextView"
+        android:layout_below="@+id/iNameTextView"
         android:layout_marginTop="14dp"
         android:ems="10" />
 
     <TextView
-        android:id="@+id/ItemTypeTextView"
+        android:id="@+id/iTypeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ItemName"
-        android:layout_below="@+id/ItemName"
+        android:layout_alignLeft="@+id/iName"
+        android:layout_below="@+id/iName"
         android:layout_marginTop="21dp"
         android:text="Category"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Spinner
-        android:id="@+id/ItemType"
+        android:id="@+id/iType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ItemName"
-        android:layout_toRightOf="@+id/ItemNameTextView"
+        android:layout_below="@+id/iName"
+        android:layout_toRightOf="@+id/iNameTextView"
         android:entries="@array/item_type" />
 
     <TextView
-        android:id="@+id/ItemDateTextView"
+        android:id="@+id/iDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ItemTypeTextView"
-        android:layout_below="@+id/ItemType"
+        android:layout_alignLeft="@+id/iTypeTextView"
+        android:layout_below="@+id/iType"
         android:layout_marginTop="16dp"
         android:text="Date"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <EditText
-        android:id="@+id/ItemDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ItemDateTextView"
-        android:layout_alignParentRight="true"
-        android:ems="10"
-        android:inputType="date" />
-
     <TextView
-        android:id="@+id/CurrencyTextView"
+        android:id="@+id/CurrTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/SpentAmountTextView"
-        android:layout_alignBottom="@+id/SpentAmountTextView"
+        android:layout_alignBaseline="@+id/SAmountTextView"
+        android:layout_alignBottom="@+id/SAmountTextView"
         android:layout_alignParentRight="true"
         android:layout_marginLeft="27dp"
-        android:layout_toRightOf="@+id/SpentAmountTextView"
+        android:layout_toRightOf="@+id/SAmountTextView"
         android:text="Currency"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Spinner
-        android:id="@+id/Currency"
+        android:id="@+id/Curr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/SpentAmount"
-        android:layout_alignLeft="@+id/CurrencyTextView"
+        android:layout_alignBottom="@+id/SAmount"
+        android:layout_alignLeft="@+id/CurrTextView"
         android:layout_alignParentRight="true"
         android:entries="@array/currency_type" />
 
     <EditText
-        android:id="@+id/ItemDescription"
+        android:id="@+id/iDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ItemDescriptionTextView"
+        android:layout_alignLeft="@+id/iDescriptionTextView"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/ItemDescriptionTextView"
+        android:layout_below="@+id/iDescriptionTextView"
         android:ems="10"
         android:inputType="textMultiLine" />
 
     <TextView
-        android:id="@+id/ItemNameTextView"
+        android:id="@+id/iNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ItemName"
+        android:layout_alignLeft="@+id/iName"
         android:layout_alignParentTop="true"
         android:text="Item Name"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/SpentAmountTextView"
+        android:id="@+id/SAmountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ItemDateTextView"
-        android:layout_below="@+id/ItemDateTextView"
+        android:layout_alignLeft="@+id/iDateTextView"
+        android:layout_below="@+id/iDateTextView"
         android:layout_marginTop="32dp"
         android:text="Spent Amount"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
-        android:id="@+id/SpentAmount"
+        android:id="@+id/SAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/CurrencyTextView"
+        android:layout_below="@+id/CurrTextView"
         android:layout_marginTop="18dp"
-        android:layout_toLeftOf="@+id/Currency"
+        android:layout_toLeftOf="@+id/Curr"
         android:ems="10" >
 
         <requestFocus />
     </EditText>
 
     <TextView
-        android:id="@+id/ItemDescriptionTextView"
+        android:id="@+id/iDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/SpentAmount"
-        android:layout_below="@+id/SpentAmount"
+        android:layout_alignLeft="@+id/SAmount"
+        android:layout_below="@+id/SAmount"
         android:layout_marginTop="17dp"
         android:text="Description"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
-        android:id="@+id/AddItemButton"
+        android:id="@+id/AddIButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ItemDescription"
+        android:layout_alignLeft="@+id/iDescription"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:text="Add This Item" />
+        android:text="Save" />
+
+    <EditText
+        android:id="@+id/iDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/iType"
+        android:layout_alignTop="@+id/iDateTextView"
+        android:ems="10"
+        android:inputType="date" />
 
 </RelativeLayout>

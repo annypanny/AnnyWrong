@@ -28,4 +28,14 @@
 
     <string name="title_activity_add_item">Add A New Item</string>
 
+    <string-array name="status_type">
+        <item>In Progress</item>
+        <item>Submitted</item>
+        <item>Returned</item>
+        <item>Approved</item>
+    </string-array>
+
+    <string name="title_activity_edit_claim">Edit Claim</string>
+    <string name="title_activity_edit_item">Edit Item</string>
+
 </resources>

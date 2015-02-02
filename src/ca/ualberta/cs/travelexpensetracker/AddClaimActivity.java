@@ -1,19 +1,19 @@
 package ca.ualberta.cs.travelexpensetracker;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 @SuppressLint("SimpleDateFormat")
@@ -24,9 +24,9 @@ public class AddClaimActivity extends Activity {
 	private EditText startDate;
 	private EditText endDate;
 	private EditText description;
-	@SuppressWarnings("unused")
 	private Button addButton;
-	private TextWatcher watcher;
+	private Spinner status;
+	
 	
 
 	@Override
@@ -40,18 +40,76 @@ public class AddClaimActivity extends Activity {
 		endDate = (EditText)findViewById(R.id.EndDate);
 		description = (EditText)findViewById(R.id.Description);
 		addButton = (Button)findViewById(R.id.AddClaimToList);
+		status = (Spinner)findViewById(R.id.StatusSpinner);
 		
-		watcher = new LocalTextWatcher();
-		claimName.addTextChangedListener(watcher);
-		startDate.addTextChangedListener(watcher);
-		endDate.addTextChangedListener(watcher);
-		description.addTextChangedListener(watcher);
-		
+		// show the date format as an example for user
 		dateFormat1();
 		dateFormat2();
 		
-		
+		addButton.setOnClickListener(new OnClickListener () {
+
+			@Override
+			public void onClick(View v) {
+				Controller controller = new Controller();
+				String claim_name_str = claimName.getText().toString();
+				String sdate_str = startDate.getText().toString();
+				String edate_str = endDate.getText().toString();
+				String des_str = description.getText().toString();
+				String status_str = status.getSelectedItem().toString();
+				
+				try {
+					controller.addClaim(new Claim(claim_name_str,sdate_str,edate_str,des_str,status_str));
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				finish();
+
+				/*
+				Gson gson = new Gson();
+				claim = (ArrayList<Claim>) Controller.getClaimList().getClaims();
+				try{
+					FileInputStream fis = openFileInput(FILENAME);
+					InputStreamReader in = new InputStreamReader(fis);
+					Type dataType = new TypeToken<ClaimList>(){}.getType();
+					claim = gson.fromJson(in, dataType);
+					fis.close();
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+			*/
+				
+		}
+			
+		});
 	}
+
+		
+		
+	/*
+	private void SaveInFile() {
+		Gson gson = new Gson();
+		try {
+			FileOutputStream fos = openFileOutput(FILENAME,0);
+			OutputStreamWriter osw = new OutputStreamWriter(fos);
+			gson.toJson(claim, osw);
+			osw.flush();
+			fos.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	*/
+
 
 
 	@Override
@@ -76,43 +134,24 @@ public class AddClaimActivity extends Activity {
 	private void dateFormat1() {
 		Date date1 = new Date();
         TextView textview1 = (TextView) findViewById(R.id.StartDate);
-        textview1.setText(new SimpleDateFormat("yyyy-MM-DD").format(date1));
+        textview1.setText(new SimpleDateFormat("yyyy-MM-dd").format(date1));
 	}
 	
 	private void dateFormat2() {
 		Date date2 = new Date();
         TextView textview2 = (TextView) findViewById(R.id.EndDate);
-        textview2.setText(new SimpleDateFormat("yyyy-MM-DD").format(date2));
+        textview2.setText(new SimpleDateFormat("yyyy-MM-dd").format(date2));
 	}
 	
+	/*
 	public void finishAddClaim(View v){
 		Intent intent = new Intent(AddClaimActivity.this, MainActivity.class);
 		startActivity(intent);
 		finish();
 	}
 	
-	private class LocalTextWatcher implements TextWatcher {
-
-		@Override
-		public void afterTextChanged(Editable s) {
-		}
-
-		@Override
-		public void beforeTextChanged(CharSequence s, int start, int count,
-				int after) {
-			// TODO Auto-generated method stub
-			
-		}
-
-		@Override
-		public void onTextChanged(CharSequence s, int start, int before,
-				int count) {
-			// TODO Auto-generated method stub
-			
-		}
-	}
 	
-	/*
+	
 	public void returnToPrevActivity(View view) {
 		finish();
 	}
