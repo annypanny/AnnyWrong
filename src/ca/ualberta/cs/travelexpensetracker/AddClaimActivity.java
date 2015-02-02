@@ -46,11 +46,13 @@ public class AddClaimActivity extends Activity {
 		dateFormat1();
 		dateFormat2();
 		
+		// when click on the add button, it will add a new claim
 		addButton.setOnClickListener(new OnClickListener () {
 
 			@Override
 			public void onClick(View v) {
 				Controller controller = new Controller();
+				// get info in string format
 				String claim_name_str = claimName.getText().toString();
 				String sdate_str = startDate.getText().toString();
 				String edate_str = endDate.getText().toString();
@@ -131,6 +133,7 @@ public class AddClaimActivity extends Activity {
 		return super.onOptionsItemSelected(item);
 	}
 	
+	// show user format of date
 	private void dateFormat1() {
 		Date date1 = new Date();
         TextView textview1 = (TextView) findViewById(R.id.StartDate);
