@@ -7,7 +7,7 @@ Travel Expense Tracker
 -This application is an simple travel expense tracking application. When you start the application, there is main page about a list view of claim and a button to add new claim.
 
 -Add claim:
-- If you would like to create a new claim, just click on “Add A Claim" at the bottom. Then it needs you to enter the informations about this claim. First, you need to enter a claim name. Then on the top right cornor, there is a spinner that you could choose your claim status. Next, enter the date you start the travel, the end date. The system is already show you the format of the date, you could just edit them. At the bottom, there is a place to write a short description about this claim such as the destination and reason of this trip.
+- If you would like to create a new claim, just click on “Add A Claim" at the bottom. Then it needs you to enter the informations about this claim. First, you need to enter a claim name. Then on the top right cornor, there is a spinner that you could choose your claim status(i.e., in progress, submitted, returned, approved). Next, enter the date you start the travel, the end date. The system is already show you the format of the date, you could just edit them. At the bottom, there is a place to write a short description about this claim such as the destination and reason of this trip.
 - After the user finish those information, click "Add This Claim" button which will come back to the main page. The user could see the new claim that you just added.
 
 -Delete claim:
@@ -17,7 +17,7 @@ Travel Expense Tracker
 - When the user want to edit a claim, long click the claim name from the main page. Then choose "edit", the system will leads you to the Edit page, and you could edit all the information about this claim. When you finish, click on the "save" button to save those information.
 
 -Add expense:
-- If you want to add an expense about this claim, just click the name of this claim form the main page. Then it shows up another screen to add the new item. The user needs to enter the item name, and select a category of this claim from the spinner. The system provides the today's date on the date field, you could edit the date by follow the format. Next, enter the amount, and select the unit of currency from the spinner. Also, write a short description about this item.
+- If you want to add an expense about this claim, just click the name of this claim form the main page. Then it shows up another screen to add the new item. The user needs to enter the item name, and select a category of this claim from the spinner(e.g., air fare, ground transport, vehicle rental, fuel, parking, registration, accommodation, meal). The system provides the today's date on the date field, you could edit the date by follow the format. Next, enter the amount, and select the unit of currency from the spinner(e.g., CAD, USD, EUR, CNY, etc.).. Also, write a short description about this item.
 - After the user finish those information, click "Add This Item" button which will come to the expense list page.You could see the new item that you just added.
 
 -Delete expense:
