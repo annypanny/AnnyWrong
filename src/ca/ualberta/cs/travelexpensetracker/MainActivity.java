@@ -68,7 +68,7 @@ public class MainActivity extends Activity {
 				startActivity(intent);
 			}
 			});
-	    
+	    // when user long click on the claim, it will pop out an dialog for you to choose "Edit/delete"
 	    claimListView.setOnItemLongClickListener(new OnItemLongClickListener(){
 
 			@Override
@@ -86,6 +86,7 @@ public class MainActivity extends Activity {
 				});
 				build.show();
 				
+				// click on "edit" buttton, link to the edit claim page 
 				 build.setNeutralButton("Edit", new OnClickListener() {
 						public void onClick (DialogInterface dialog, int which) {
 							Intent intent = new Intent(MainActivity.this, EditClaimActivity.class);
@@ -110,6 +111,7 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
+	// link the claim list page with add claim page
 	public void addClaim(View v) {
 		//Toast.makeText(this, "Add Claim", Toast.LENGTH_SHORT).show();
 		Intent intent = new Intent(MainActivity.this, AddClaimActivity.class);
