@@ -1,6 +1,4 @@
-# CMPUT301 Assignment 1
 
-Name: Xinyi Pan
 
 Travel Expense Tracker (video: http://youtu.be/u5TFqsJZuuU)
 
